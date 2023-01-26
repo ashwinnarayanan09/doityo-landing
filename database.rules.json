@@ -1,0 +1,28 @@
+{
+  "rules": {
+   "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid",
+     "chapters":{
+         ".indexOn": "notebookId"
+       }  
+      },
+        "blogs":{
+        ".read": "true",
+        ".write": "auth.uid!=null"
+      },
+        "discounts":{
+        ".read": "true",
+        ".write": "auth.uid!=null"
+      },
+        "contacts":{
+        ".read": "true",
+        ".write": "auth.uid!=null"
+      },
+       "subscriptions":{
+        ".read": "auth.uid!=null",
+        ".write": "true"
+       },
+       
+  }
+}
