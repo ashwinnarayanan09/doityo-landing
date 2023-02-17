@@ -32,18 +32,18 @@ const Home = () => {
             </svg>
           </a>
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            We invest in the world’s potential
+            Do It Yourself
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+            Doityo is a personal data management application free to use for
+            taking notes and managing personal projects.
           </p>
           <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a
-              href="#"
+              href="app.doityo.io"
               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
-              Learn more
+              Try
               <svg
                 className="ml-2 -mr-1 w-5 h-5"
                 fill="currentColor"
@@ -185,11 +185,11 @@ const Home = () => {
         <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
           <div className="max-w-screen-md mb-8 lg:mb-16">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Designed for business teams like yours
+              Designed for everyone who like to take notes
             </h2>
             <p className="text-gray-500 sm:text-xl dark:text-gray-400">
-              Here at Flowbite we focus on markets where technology, innovation,
-              and capital can unlock long-term value and drive economic growth.
+              Doityo is not just a note taking app. It offers sveral other
+              features.
             </p>
           </div>
           <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -208,13 +208,9 @@ const Home = () => {
                   ></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Marketing
-              </h3>
+              <h3 className="mb-2 text-xl font-bold dark:text-white">CRM</h3>
               <p className="text-gray-500 dark:text-gray-400">
-                Plan it, create it, launch it. Collaborate seamlessly with all
-                the organization and hit your marketing goals every month with
-                our marketing plan.
+                Lightweight CRM to manage your customer data.
               </p>
             </div>
             <div>
@@ -228,10 +224,9 @@ const Home = () => {
                   <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">Legal</h3>
+              <h3 className="mb-2 text-xl font-bold dark:text-white">HRMS</h3>
               <p className="text-gray-500 dark:text-gray-400">
-                Protect your organization, devices and stay compliant with our
-                structured workflows and custom permissions made for you.
+                Lightweight HRMS to manage jobs & candidates data.
               </p>
             </div>
             <div>
@@ -251,12 +246,9 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Business Automation
+                E-commerce
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">
-                Auto-assign tasks, send Slack messages, and much more. Now power
-                up with hundreds of new templates to help you get started.
-              </p>
+              <p className="text-gray-500 dark:text-gray-400">Marketplace</p>
             </div>
             <div>
               <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
@@ -275,11 +267,10 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Finance
+                Notbooks
               </h3>
               <p className="text-gray-500 dark:text-gray-400">
-                Audit-proof software built for critical financial operations
-                like month-end close and quarterly budgeting.
+                Manage your notes in Notebooks & chapters.
               </p>
             </div>
             <div>
@@ -293,12 +284,9 @@ const Home = () => {
                   <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Enterprise Design
-              </h3>
+              <h3 className="mb-2 text-xl font-bold dark:text-white">Feeds</h3>
               <p className="text-gray-500 dark:text-gray-400">
-                Craft beautiful, delightful experiences for both marketing and
-                product with real cross-company collaboration.
+                Create personl news feeds.
               </p>
             </div>
             <div>
@@ -316,13 +304,9 @@ const Home = () => {
                   ></path>
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold dark:text-white">
-                Operations
-              </h3>
+              <h3 className="mb-2 text-xl font-bold dark:text-white">Events</h3>
               <p className="text-gray-500 dark:text-gray-400">
-                Keep your company’s lights on with customizable, iterative, and
-                structured workflows built for all efficient teams and
-                individual.
+                Kepp track of your personal events.
               </p>
             </div>
           </div>
@@ -335,10 +319,7 @@ const Home = () => {
               Let's find more that brings us together.
             </h2>
             <p className="mb-8 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-              Flowbite helps you connect with friends, family and communities of
-              people who share your interests. Connecting with your friends and
-              family as well as discovering new ones is easy with features like
-              Groups, Watch and Marketplace.
+              Doityo helps you to manage & save your ideas.
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
               <a
@@ -348,7 +329,7 @@ const Home = () => {
                 Get started
               </a>
               <a
-                href="#"
+                href="app.doityo.io"
                 className="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               >
                 <svg
@@ -560,9 +541,9 @@ const Home = () => {
             </li>
           </ul>
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2021-2022{" "}
+            © 2023{" "}
             <a href="#" className="hover:underline">
-              Flowbite™
+              Doityo
             </a>
             . All Rights Reserved.
           </span>
