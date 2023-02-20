@@ -4,57 +4,55 @@ import { Link } from "react-router-dom";
 import { fetchBlogs, filterBlogs } from "../services/blog.service";
 import { Blog } from "../models/Blog";
 
+const buttons = ["all"];
+
 const BlogList = () => {
-  const [blogs, setFilteredBlogs] = useState<Blog[]>([]);
+  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   // fetch data
 
-  useEffect(() => {
-    fetchBlogs().then((res) => {
-      setFilteredBlogs(res);
-    });
-  }, []);
-
-  const buttons = [
-    {
-      name: "All",
-      value: "all",
-    },
-  ];
-
-  blogs.map((blog) => {
-    buttons.push({ name: blog.area, value: blog.area });
-    console.log(buttons);
-  });
-
   function filterBlogs(area) {
+    console.log(area);
+    console.log(blogs);
     return blogs.filter((blog) => blog.area == area);
   }
 
   function handleBlogs(e) {
     let area = e.target.value;
-    area !== "all"
+
+    area != "all"
       ? setFilteredBlogs(filterBlogs(area))
       : fetchBlogs().then((res) => setFilteredBlogs(res));
   }
+
+  useEffect(() => {
+    console.log("useEffect");
+    fetchBlogs().then((res) => {
+      setFilteredBlogs(res);
+      setBlogs(res);
+      const unique = Array.from(new Set(res.map((item) => item.area)));
+      unique.map((area) => {
+        buttons.push(area);
+      });
+    });
+  }, []);
 
   return (
     <>
       <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         {buttons &&
-          buttons.map((type, index) => (
-            <>
-              <button
-                key={index}
-                value={type.value}
-                onClick={handleBlogs}
-                className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-              >
-                {type.name}
-              </button>
-            </>
+          buttons.map((button, i) => (
+            <button
+              key={i.toString()}
+              value={button}
+              onClick={handleBlogs}
+              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+            >
+              {button}
+            </button>
           ))}
-        {blogs.map((item, i) => (
-          <div className="max-w-sm">
+        {filteredBlogs.map((item, i) => (
+          <div className="max-w-sm" key={item.id}>
             <Card imgSrc={item.image} style={Container}>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 <Link

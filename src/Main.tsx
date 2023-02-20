@@ -4,6 +4,7 @@ import BlogList from "./components/BlogList";
 import Editor from "./components/Editor";
 
 import Home from "./components/Home";
+import MyComponent from "./components/MyComponent";
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
       <Route path="/editor" element={<Editor />} />
       <Route path="/blogs" element={<BlogList />} />
       <Route path="/blogs/:id" element={<BlogDetail />} />
+      <Route path="/my" element={<MyComponent />} />
     </Routes>
   );
 };
