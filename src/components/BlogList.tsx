@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import { fetchBlogs, filterBlogs } from "../services/blog.service";
 import { Blog } from "../models/Blog";
 
-const buttons = ["all"];
-
 const BlogList = () => {
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [buttons, setButtons] = useState<String[]>(["all"]);
   // fetch data
 
   function filterBlogs(area) {
@@ -25,32 +24,37 @@ const BlogList = () => {
       : fetchBlogs().then((res) => setFilteredBlogs(res));
   }
 
+  function FilterButtons({ buttons, action }) {
+    console.log(buttons);
+    return (
+      buttons &&
+      buttons.map((button, i) => (
+        <button
+          key={i.toString()}
+          value={button}
+          onClick={action}
+          className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
+          {button}
+        </button>
+      ))
+    );
+  }
+
   useEffect(() => {
     console.log("useEffect");
     fetchBlogs().then((res) => {
       setFilteredBlogs(res);
       setBlogs(res);
       const unique = Array.from(new Set(res.map((item) => item.area)));
-      unique.map((area) => {
-        buttons.push(area);
-      });
+      setButtons(["all", ...unique]);
     });
   }, []);
 
   return (
     <>
       <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        {buttons &&
-          buttons.map((button, i) => (
-            <button
-              key={i.toString()}
-              value={button}
-              onClick={handleBlogs}
-              className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
-            >
-              {button}
-            </button>
-          ))}
+        <FilterButtons buttons={buttons} action={handleBlogs} />
         {filteredBlogs.map((item, i) => (
           <div className="max-w-sm" key={item.id}>
             <Card imgSrc={item.image} style={Container}>
