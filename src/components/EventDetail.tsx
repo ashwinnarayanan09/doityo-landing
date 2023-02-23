@@ -39,7 +39,7 @@ function EventDetail() {
   };
 
   const register = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     try {
       const docRef = await addDoc(collection(db, "registrations"), {
@@ -47,8 +47,8 @@ function EventDetail() {
         event: id,
       });
       //navigate("https://buy.stripe.com/aEU00Xfurg2T4zS5kk");
-      window.open("https://buy.stripe.com/aEU00Xfurg2T4zS5kk", "_blank");
-      console.log("Document written with ID: ", docRef.id);
+      // window.open("https://buy.stripe.com/aEU00Xfurg2T4zS5kk", "_blank");
+      // console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -83,9 +83,14 @@ function EventDetail() {
               required={true}
             />
           </div>
-          <Button type="button" onClick={register}>
+          <a
+            href="https://buy.stripe.com/aEU00Xfurg2T4zS5kk"
+            type="button"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            onClick={register}
+          >
             Register & Pay
-          </Button>
+          </a>
         </form>
       </div>
     </div>
